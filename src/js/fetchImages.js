@@ -20,11 +20,12 @@ export class PixabayAPI {
         per_page: 40,
         image_type: 'photo',
         orientation: 'horizontal',
-        safesearch: true,
+        safesearch: 'true',
       },
     };
-console.log(axios.get(`${PixabayAPI.BASE_URL}`, searchParams));
+// console.log(axios.get(`${PixabayAPI.BASE_URL}`, searchParams));
     return axios.get(`${PixabayAPI.BASE_URL}`, searchParams);
+    // return axios.get('https://pixabay.com/api/?key=32824068-9cbe878c59eec5e2306c3f693&q=yellow+flowers&image_type=photo&pretty=true');
   }
 
   }
