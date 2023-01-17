@@ -4,7 +4,7 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { PixabayAPI } from '../js/fetchImages';
 
-const searchFormEl = document.querySelector('.search-form-input');
+const searchFormEl = document.querySelector('.search-form');
 const searchBtnEl = document.querySelector('.search-form-button');
 const gallery = document.querySelector('.gallery');
 const loadMoreBtnEl = document.querySelector('.load-more');
@@ -46,13 +46,11 @@ const createGalleryCards = images => {
 
 const onSearchFormSubmit = event => {
   event.preventDefault();
-
   searchBtnEl.disabled = true;
   searchBtnEl.classList.add('disabled');
 
   pixabayAPI.q = event.target.elements.searchQuery.value;
   pixabayAPI.page = 1;
- console.log(event.target.elements.searchQuery.value);
 
   pixabayAPI
     .fetchPhotosByQuery()
@@ -113,6 +111,7 @@ const onLoadMoreBtnClick = event => {
 };
 
 searchFormEl.addEventListener('submit', onSearchFormSubmit);
+// searchFormEl.addEventListener('submit', (e) => { e.preventDefault(); console.log(e.target)})
 loadMoreBtnEl.addEventListener('click', onLoadMoreBtnClick);
 
 

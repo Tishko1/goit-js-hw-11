@@ -4,7 +4,7 @@ import axios from "axios";
 
 export class PixabayAPI {
   static BASE_URL = 'https://pixabay.com/api';
-  static API_KEY = 'key=32824068-9cbe878c59eec5e2306c3f693';
+  static API_KEY = '32824068-9cbe878c59eec5e2306c3f693';
 
   constructor() {
     this.page = 1;
@@ -18,13 +18,13 @@ export class PixabayAPI {
         q: this.q,
         page: this.page,
         per_page: 40,
-        image_type: photo,
+        image_type: 'photo',
         orientation: 'horizontal',
         safesearch: true,
       },
     };
 console.log(axios.get(`${PixabayAPI.BASE_URL}`, searchParams));
-    return axios.get(`${PixabayAPI.BASE_URL}/search/photos`, searchParams);
+    return axios.get(`${PixabayAPI.BASE_URL}`, searchParams);
   }
 
   }
