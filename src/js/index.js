@@ -65,7 +65,7 @@ const onSearchFormSubmit = async event => {
     }
 
     let total_pages = Math.ceil(+data.totalHits / +pixabayAPI.per_page);
-    // console.log(total_pages);
+    console.log(total_pages);
     if (total_pages > 1) {
       loadMoreBtnEl.classList.remove('is-hidden');
     }
