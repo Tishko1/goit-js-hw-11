@@ -69,8 +69,8 @@ const onSearchFormSubmit = event => {
         return;
       }
 
-      // let total_pages =  Math.ceil(+data.totalHits/+pixabayAPI.per_page);
-      // console.log(total_pages);
+      let total_pages =  Math.ceil(+data.totalHits/+pixabayAPI.per_page);
+      console.log(total_pages);
       if (data.hits.length > 1) {
         loadMoreBtnEl.classList.remove('is-hidden');
       }
